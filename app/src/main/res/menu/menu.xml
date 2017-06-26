@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/blackpen"
+            android:title="Black Pen"/>
+        <item
+        android:id="@+id/redpen"
+        android:title="Red Pen"/>
+    <item
+        android:id="@+id/yellowpen"
+        android:title="Yellow Pen"/>
+    <item
+        android:id="@+id/greenpen"
+        android:title="Green Pen"/>
+    <item
+        android:id="@+id/bluepen"
+        android:title="Blue Pen"/>
+
+    <item
+        android:id="@+id/eraser"
+        android:title="Eraser"/>
+    </group>
+    <item
+        android:id="@+id/remover"
+        android:title="Remover"/>
+
+</menu>
