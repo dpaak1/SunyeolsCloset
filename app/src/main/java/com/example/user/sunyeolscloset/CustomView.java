@@ -27,6 +27,7 @@ import static com.example.user.sunyeolscloset.MainActivity.talkview;
 public class CustomView extends View {
     Canvas mCanvas;
     Paint mPaint;
+    Paint mPaintforPen;
     Bitmap mBitmap;
     ///--item
     Bitmap shirtBmap1;
@@ -66,8 +67,9 @@ public class CustomView extends View {
 
     public CustomView(final Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.mPaint = new Paint();
-        mPaint.setStrokeWidth(5);//펜굵기
+        mPaint = new Paint();
+        mPaintforPen = new Paint();
+        mPaintforPen.setStrokeWidth(5);//펜굵기
 
         mDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
@@ -84,8 +86,12 @@ public class CustomView extends View {
             @Override
             public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {//스크롤제스쳐이벤트
                 Log.d("myapp", "" + whatItem);
-                MainActivity.stressUp();
+                MainActivity.stressUp(1);
                 // /scrollBy((int)distanceX,(int)distanxeY);
+                if(whatItem==43){
+                    talkview.setText("적당히해라..");
+                    MainActivity.stressUp(10);
+                }
                 if(whatItem!=0){
                 getClothesData(whatItem).itemMatrix.postTranslate(-distanceX, -distanceY);//매트릭스를 원하는 위치로 이동한다
                 invalidate();}
@@ -94,8 +100,6 @@ public class CustomView extends View {
 
             @Override
             public boolean onDoubleTap(MotionEvent e) {//더블클릭제스쳐
-                //matrix.postScale(1.5f, 1.5f);
-                // invalidate();
                 talkview.setText("건드리지마ㅡㅡ");
                 return true;
             }
@@ -132,11 +136,6 @@ public class CustomView extends View {
         blackjmt = new Matrix();
         oldjmt = new Matrix();
         hairmt = new Matrix();
-    //    bodymtx.reset();
-       // shirtmtx1.reset();
-    //    slippermt.reset();
-      //  hanbokmt.reset();
-     //   glassesmt.reset();
         //  bodymtx.postScale(0.5f,0.5f);
         //  bodymtx.postTranslate((mCanvas.getWidth()-bodyBmap.getWidth()/2)/2,(mCanvas.getHeight()-bodyBmap.getHeight()/2)/2); 중심에 출력
 
@@ -169,7 +168,7 @@ public class CustomView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (whatItem == 3) {
+        if (whatItem == 9) {
             int X = (int) event.getX();
             int Y = (int) event.getY();
 
@@ -178,14 +177,14 @@ public class CustomView extends View {
                 oldy = Y;
             } else if (event.getAction() == MotionEvent.ACTION_MOVE) { //터치 후 움직였을 때
                 if (oldx != -1) {
-                    mCanvas.drawLine(oldx, oldy, X, Y, mPaint);
+                    mCanvas.drawLine(oldx, oldy, X, Y, mPaintforPen );
                     invalidate();
                     oldx = X;
                     oldy = Y;
                 }
             } else if (event.getAction() == MotionEvent.ACTION_UP) { // 손을 땠을때
                 if (oldx != -1) {
-                    mCanvas.drawLine(oldx, oldy, X, Y, mPaint);
+                    mCanvas.drawLine(oldx, oldy, X, Y, mPaintforPen);
                     invalidate();
                 }
                 //  if (check) drawStamp(X, Y);
@@ -200,36 +199,40 @@ public class CustomView extends View {
 
 
     void penBlack() {
-        mPaint.setColor(Color.BLACK);
+        mPaintforPen.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+        mPaintforPen .setStrokeWidth(5);
+        mPaintforPen .setColor(Color.BLACK);
     }
 
     void penRed() {
-        mPaint.setColor(Color.parseColor("#ef3f36"));
+        mPaintforPen.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+        mPaintforPen .setStrokeWidth(5);
+        mPaintforPen .setColor(Color.parseColor("#ef3f36"));
     }
 
     void penyellow() {
-        mPaint.setColor(Color.parseColor("#ffd33f"));
+
+        mPaintforPen.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+        mPaintforPen .setStrokeWidth(5);
+        mPaintforPen .setColor(Color.parseColor("#ffd33f"));
     }
 
     void penGreen() {
-        mPaint.setColor(Color.parseColor("#008a70"));
+        mPaintforPen.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+        mPaintforPen .setStrokeWidth(5);
+        mPaintforPen .setColor(Color.parseColor("#008a70"));
     }
 
     void penBlue() {
-        mPaint.setColor(Color.parseColor("#004477"));
+        mPaintforPen.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN));
+        mPaintforPen .setStrokeWidth(5);
+        mPaintforPen .setColor(Color.parseColor("#004477"));
     }
 
     void eraser() {
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        mPaint.setStrokeWidth(30);
-        mPaint.setAntiAlias(true);
-        invalidate();
-    }
-
-    void remover() {
-        //  mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        //   mCanvas.drawBitmap();
-        mCanvas.setBitmap(mBitmap);
+        mPaintforPen .setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        mPaintforPen .setStrokeWidth(50);
+        mPaintforPen .setAntiAlias(true);
         invalidate();
     }
 

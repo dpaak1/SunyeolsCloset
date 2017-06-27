@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.example.user.sunyeolscloset.CustomView.getClothesData;
 import static com.example.user.sunyeolscloset.MainActivity.moneyview;
 import static com.example.user.sunyeolscloset.MainActivity.stressDown;
 import static com.example.user.sunyeolscloset.MainActivity.talkview;
@@ -64,17 +65,29 @@ public class CustomDialog extends Dialog {
                     moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-13000));
                 stressDown(200);
                 }else if(a.nameData=="구두") {
+                    if(!getClothesData(11).itemVisible){
                     CustomView.setItemTrue(11);
                     Toast.makeText(activity, " 검은 구두를 샀다" , Toast.LENGTH_SHORT).show();
-                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-30000));
+                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-30000));}
+                    else{
+                        Toast.makeText(activity, " 이미 구매한 신발이다" , Toast.LENGTH_SHORT).show();
+                    }
             }else if(a.nameData=="검은 셔츠") {
+                    if(!getClothesData(31).itemVisible){
                 CustomView.setItemTrue(31);
                     Toast.makeText(activity, " 검은 셔츠를 샀다" , Toast.LENGTH_SHORT).show();
-                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-25000));
+                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-25000));}
+                    else{
+                        Toast.makeText(activity, " 이미 구매한 옷이다" , Toast.LENGTH_SHORT).show();
+                    }
             }else if(a.nameData=="머리방울") {
+                    if(!getClothesData(43).itemVisible){
             CustomView.setItemTrue(43);
              Toast.makeText(activity, " 화내면 어쩌지?" , Toast.LENGTH_SHORT).show();
-                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-4000));
+                    moneyview.setText( String.valueOf(Integer.parseInt((String) moneyview.getText())-4000));}
+                    else{
+                        Toast.makeText(activity, "이미 구매했다" , Toast.LENGTH_SHORT).show();
+                    }
         }
             }
         });

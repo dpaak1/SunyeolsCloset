@@ -22,8 +22,5 @@
         android:id="@+id/eraser"
         android:title="Eraser"/>
     </group>
-    <item
-        android:id="@+id/remover"
-        android:title="Remover"/>
 
 </menu>
