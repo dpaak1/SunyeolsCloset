@@ -10,7 +10,8 @@
         <!-- 배경색 -->
         <solid android:color="#EEFFFFFF" />
         <!-- 라인색 및 두께 -->
-        <stroke android:width="5dp" android:color="#60c4c8"/>
+        <stroke android:width="5dp" android:color="#3f51b5"/>
+
     </shape>
 </item>
 </layer-list>

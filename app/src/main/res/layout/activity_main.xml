@@ -23,23 +23,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/talkview"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/talkview"
-                android:paddingLeft="60dp"
-                android:paddingTop="10dp"
-                android:text="안녕ㅇㅅㅇ"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/talkview" />
+
+                <TextView
+                    android:id="@+id/talkview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="100dp"
+                    android:paddingTop="20dp"
+                    android:text="안녕ㅇㅅㅇ"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -88,7 +95,6 @@
         android:background="@drawable/mystate"
         android:orientation="horizontal">
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,8 +108,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/mycard" />
@@ -115,8 +121,21 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="100,000"
-                android:textSize="18sp" />
+                android:text="100000"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moneyview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="원"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!--   <Button
@@ -125,37 +144,38 @@
                 android:layout_height="wrap_content"
                 android:text="Body" />-->
 
-        <Button
+        <!--<Button
             android:id="@+id/pen_button"
             android:layout_width="54dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:text="Pen" />
+            android:text="Pen" />-->
 
         <ImageButton
             android:id="@+id/random_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/shop_button"
             android:background="@android:color/transparent"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/randombox" />
 
         <ImageButton
             android:id="@+id/shop_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="10dp"
             android:background="@android:color/transparent"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/shop" />
-
     </RelativeLayout>
 
 

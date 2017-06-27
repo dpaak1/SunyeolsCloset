@@ -20,7 +20,7 @@
         android:layout_marginRight="10dp"
         android:layout_weight="1"
         android:text="아이템명"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -43,6 +43,8 @@
             android:id="@+id/item_price_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingRight="20dp"
             android:text="가격"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>
