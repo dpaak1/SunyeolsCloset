@@ -12,8 +12,6 @@ public class CustomSmallDialog extends Dialog {
 
     private ImageButton closeButton;
 
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -23,13 +21,12 @@ public class CustomSmallDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 dismiss();
-                int pid = android.os.Process.myPid();
+                int pid = android.os.Process.myPid(); //앱 강제종료
                 android.os.Process.killProcess(pid);
             }
         });
 
     }
-
 
     public CustomSmallDialog(Context context) { //생성자
         super(context, android.R.style.Theme_Translucent_NoTitleBar);

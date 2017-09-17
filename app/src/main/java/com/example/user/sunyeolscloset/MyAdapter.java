@@ -14,7 +14,6 @@ public class MyAdapter extends BaseAdapter{
 
     ArrayList<ItemData> items = new ArrayList<ItemData>();
     Context mContext;
-   // private Activity activity;
 
     public MyAdapter(Context context){
         mContext = context;

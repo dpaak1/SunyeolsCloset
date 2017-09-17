@@ -28,7 +28,9 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -75,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
             android:src="@drawable/body_animation" />
 
         <com.example.user.sunyeolscloset.CustomView
@@ -116,6 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:text="90000"
                 android:textColor="@color/colorPrimaryDark"
@@ -152,11 +155,13 @@
 
         <ImageButton
             android:id="@+id/random_button"
-            android:layout_width="75dp"
+            android:layout_width="65dp"
             android:layout_height="48dp"
             android:layout_alignTop="@+id/linearLayout"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/shop_button"
+            android:layout_toStartOf="@+id/shop_button"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/randombox" />
@@ -165,11 +170,12 @@
             android:id="@+id/shop_button"
             android:layout_width="50dp"
             android:layout_height="48dp"
-            android:layout_alignTop="@+id/random_button"
             android:layout_centerInParent="false"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_toEndOf="@+id/random_button"
-            android:layout_toRightOf="@+id/random_button"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/pen_button"
+            android:layout_toStartOf="@+id/pen_button"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/shop" />
@@ -181,8 +187,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/shop_button"
-            android:layout_marginEnd="41dp"
-            android:layout_marginRight="41dp"
+            android:layout_marginRight="20dp"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
             android:src="@drawable/penbx" />
